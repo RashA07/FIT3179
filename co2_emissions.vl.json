@@ -12,7 +12,7 @@
       "lookup": "properties.NAME",
       "from": {
         "data": {
-          "url": "https://rasha07.github.io/FIT3179/data/List_of_countries_by_carbon_dioxide_emissions_fixed.csv"
+          "url": "https://rasha07.github.io/FIT3179_tut/data/List_of_countries_by_carbon_dioxide_emissions_fixed.csv"
         },
         "key": "Country",
         "fields": ["2017"]
