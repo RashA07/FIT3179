@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "Change in CO2 Emissions over time",
+  "title": "Change in CO2 Emissions over time",
+  "data": {
+    "url": "https://rasha07.github.io/FIT3179_tut/data/co2_emissions.csv"
+  },
+  "width": 500,
+  "height": 500,
+  "params": [
+    {
+      "name": "country_focus",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Australia",
+          "Malaysia",
+          "Singapore",
+          "United Kingdom"
+        ],
+        "labels": ["Show All", "Australia", "Malaysia", "Singapore", "UK"],
+        "name": "Country Focus:"
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "country_focus == null || datum.Country == country_focus"}
+  ],
+  "mark": {"type": "line", "interpolate": "cardinal"},
+  "encoding": {
+    "x": {"field": "Year", "type": "temporal"},
+    "y": {"field": "Emission", "type": "quantitative"},
+    "color": {"field": "Country", "type": "nominal"},
+    "tooltip": [
+      {"field": "Country", "type": "nominal", "title": "Country"},
+      {"field": "Emission", "type": "quantitative", "format": ","}
+    ]
+  },
+  "config": {}
+}
