@@ -19,7 +19,7 @@
       }
     }
   ],
-  "projection": {"type": "azimuthalEqualArea"},
+  "projection": {"type": "equalEarth"},
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
