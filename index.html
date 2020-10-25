@@ -9,13 +9,21 @@
 </head>
 <body>
 
-<div id="vis"></div>
+<div id="vis_co2"></div>
+<br>
+<div id="vis_covid"></div>
 
 <script type="text/javascript">
-  var spec = "https://rasha07.github.io/FIT3179_tut/co2_emissions.vl.json";
-  vegaEmbed('#vis', spec).then(function(result) {
+  var spec_co2 = "https://rasha07.github.io/FIT3179_tut/co2_emissions.vl.json";
+  var spec_covid = "https://rasha07.github.io/FIT3179_tut/covid.vl.json";
+  
+  vegaEmbed('#vis_co2', spec_co2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
+  vegaEmbed('#vis_covid', spec_covid).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
 </script>
 </body>
 </html>
