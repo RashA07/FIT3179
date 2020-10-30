@@ -10,32 +10,30 @@
 </head>
 <body>
 
-  <div style="align:center;">
-  <div id="vis_map"></div>
-  
-  <div id="vis_ship_avi"></div>
+  <div id="vis_map" style="margin-left: auto; margin-right: auto"></div>
   
   <div id="vis_pop"></div>
   
   <div id="vis_slope"></div>
-  </div>
+  
+  <div id="vis_ship_avi" style="margin-left: auto; margin-right: auto"></div>
 
 <script type="text/javascript">
   var spec_map = "https://rasha07.github.io/FIT3179_tut/co2_emissions.vl.json";
-  var spec_avi = "https://rasha07.github.io/FIT3179_tut/shipping_aviation.vl.json";
   var spec_pop = "https://rasha07.github.io/FIT3179_tut/emission_population_gdp.vl.json";
   var spec_slope = "https://rasha07.github.io/FIT3179_tut/emission_time.vl.json";
+  var spec_avi = "https://rasha07.github.io/FIT3179_tut/shipping_aviation.vl.json";
   
   vegaEmbed('#vis_map', spec_map).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-  vegaEmbed('#vis_ship_avi', spec_avi).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   vegaEmbed('#vis_pop', spec_pop).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   vegaEmbed('#vis_slope', spec_slope).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#vis_ship_avi', spec_avi).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
