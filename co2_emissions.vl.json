@@ -28,7 +28,7 @@
       "scale": {
         "type": "threshold",
         "domain": [10, 100, 1000],
-        "range": ["#fdbe85", "#fd8d3c", "#ff0000", "#c60000"]
+        "range": ["#ffec19", "#ffc100", "#ff9800", "#ff5607"]
       }
     },
     "tooltip": [

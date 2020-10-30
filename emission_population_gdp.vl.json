@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "CO2 v Population",
+  "title": "CO2 v Population",
+  "width": 400,
+  "height": 400,
+  "data": {
+    "url": "https://rasha07.github.io/FIT3179_tut/data/co2_emissions.csv"
+  },
+  "transform": [
+    {
+      "lookup": "Country",
+      "from": {
+        "data": {
+          "url": "https://rasha07.github.io/FIT3179_tut/data/country_profile_variables.csv"
+        },
+        "key": "country",
+        "fields": [
+          "Region",
+          "Population in thousands (2017)",
+          "Population density (per km2, 2017)",
+          "GDP per capita (current US$)",
+          "Forested area (% of land area)"
+        ]
+      }
+    }
+  ],
+  "mark": {"type": "circle"},
+  "encoding": {
+    "x": {
+      "field": "Population in thousands (2017)",
+      "type": "quantitative",
+      "scale": {"type": "log"}
+    },
+    "y": {
+      "field": "Emission",
+      "type": "quantitative",
+      "scale": {"type": "log"}
+    },
+    "size": {"field": "GDP per capita (current US$)", "type": "quantitative"},
+    "color": {"field": "Region", "type": "nominal"}
+  },
+  "config": {}
+}

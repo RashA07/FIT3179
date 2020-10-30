@@ -5,7 +5,7 @@
   "data": {
     "url": "https://rasha07.github.io/FIT3179_tut/data/co2_emissions.csv"
   },
-  "width": 500,
+  "width": 250,
   "height": 500,
   "params": [
     {
@@ -17,9 +17,17 @@
           "Australia",
           "Malaysia",
           "Singapore",
-          "United Kingdom"
+          "United Kingdom",
+          "Bhutan"
         ],
-        "labels": ["Show All", "Australia", "Malaysia", "Singapore", "UK"],
+        "labels": [
+          "Show All",
+          "Australia",
+          "Malaysia",
+          "Singapore",
+          "UK",
+          "Bhutan"
+        ],
         "name": "Country Focus:"
       }
     }
@@ -27,14 +35,18 @@
   "transform": [
     {"filter": "country_focus == null || datum.Country == country_focus"}
   ],
-  "mark": {"type": "line", "interpolate": "cardinal"},
+  "mark": {"type": "line"},
   "encoding": {
-    "x": {"field": "Year", "type": "temporal"},
-    "y": {"field": "Emission", "type": "quantitative"},
+    "x": {"field": "Year", "type": "ordinal"},
+    "y": {
+      "field": "Emission",
+      "type": "quantitative",
+      "scale": {"type": "log"}
+    },
     "color": {"field": "Country", "type": "nominal"},
     "tooltip": [
-      {"field": "Country", "type": "nominal", "title": "Country"},
-      {"field": "Emission", "type": "quantitative", "format": ","}
+      {"field": "Country", "type": "nominal"},
+      {"field": "Emission", "type": "quantitative"}
     ]
   },
   "config": {}
