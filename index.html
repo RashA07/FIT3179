@@ -20,7 +20,7 @@
 <br>
 <div id="vis_ship_avi"></div>
 <br>
-<div id="vis_pop"></div>
+<div id="vis_pop" class="photo-box photo-box-thin pure-u-1 pure-u-lg-2-3"></div>
 <br>
 <div id="vis_slope"></div>
 
@@ -30,7 +30,7 @@
   var spec_pop = "https://rasha07.github.io/FIT3179_tut/emission_population_gdp.vl.json";
   var spec_slope = "https://rasha07.github.io/FIT3179_tut/emission_time.vl.json";
   
-  vegaEmbed('#vis_co2', spec_map).then(function(result) {
+  vegaEmbed('#vis_map', spec_map).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   vegaEmbed('#vis_ship_avi', spec_avi).then(function(result) {
