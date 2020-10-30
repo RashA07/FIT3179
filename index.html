@@ -6,21 +6,40 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
   <!-- Import vega-embed -->
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a responsive photo gallery.">
+    <title>Photo Gallery &ndash; Layout Examples &ndash; Pure</title>
+    <link rel="stylesheet" href="/css/pure/pure-min.css">
+    <link rel="stylesheet" href="/css/pure/grids-responsive-min.css">
+    <link rel="stylesheet" href="/layouts/gallery/styles.css">
 </head>
 <body>
 
-<div id="vis_co2"></div>
+<div id="vis_map"></div>
 <br>
-<div id="vis_covid"></div>
+<div id="vis_ship_avi"></div>
+<br>
+<div id="vis_pop"></div>
+<br>
+<div id="vis_slope"></div>
 
 <script type="text/javascript">
-  var spec_co2 = "https://rasha07.github.io/FIT3179_tut/co2_emissions.vl.json";
-  var spec_ems_time = "https://rasha07.github.io/FIT3179_tut/emission_time.vl.json";
+  var spec_map = "https://rasha07.github.io/FIT3179_tut/co2_emissions.vl.json";
+  var spec_avi = "https://rasha07.github.io/FIT3179_tut/shipping_aviation.vl.json";
+  var spec_pop = "https://rasha07.github.io/FIT3179_tut/emission_population_gdp.vl.json";
+  var spec_slope = "https://rasha07.github.io/FIT3179_tut/emission_time.vl.json";
   
-  vegaEmbed('#vis_co2', spec_co2).then(function(result) {
+  vegaEmbed('#vis_co2', spec_map).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
-  vegaEmbed('#vis_covid', spec_ems_time).then(function(result) {
+  vegaEmbed('#vis_ship_avi', spec_avi).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#vis_pop', spec_pop).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#vis_slope', spec_slope).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
