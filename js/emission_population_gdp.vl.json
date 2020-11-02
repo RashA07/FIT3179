@@ -1,0 +1,80 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "CO2 v Population",
+  "title": "CO2 v Population",
+  "width": 400,
+  "height": 400,
+  "data": {
+    "url": "https://rasha07.github.io/FIT3179_tut/data/List_of_countries_by_carbon_dioxide_emissions_fixed.csv"
+  },
+  "selection": {"grid": {"type": "interval", "bind": "scales"}},
+  "transform": [
+    {
+      "lookup": "Country",
+      "from": {
+        "data": {
+          "url": "https://rasha07.github.io/FIT3179_tut/data/country_profile_variables.csv"
+        },
+        "key": "country",
+        "fields": [
+          "Region",
+          "Population in thousands (2017)",
+          "Population density (per km2, 2017)",
+          "GDP per capita (current US$)",
+          "Forested area (% of land area)"
+        ]
+      }
+    },
+    {"filter": "datum['GDP per capita (current US$)']>0"}
+  ],
+  "mark": {"type": "circle"},
+  "encoding": {
+    "x": {
+      "field": "Population in thousands (2017)",
+      "type": "quantitative",
+      "scale": {"type": "log"},
+      "axis": {"tickCount": 5}
+    },
+    "y": {
+      "field": "2017",
+      "type": "quantitative",
+      "scale": {"type": "log"},
+      "axis": {"tickCount": 5}
+    },
+    "size": {
+      "field": "GDP per capita (current US$)",
+      "type": "quantitative",
+      "scale": {
+        "type": "threshold",
+        "domain": [500, 10000, 30000, 60000, 80000],
+        "range": [10, 20, 40, 80, 160, 320]
+      }
+    },
+    "color": {"field": "Region", "type": "nominal"},
+    "tooltip": [
+      {"field": "Country"},
+      {
+        "field": "2017",
+        "type": "quantitative",
+        "format": ".3f",
+        "title": "Emissions in tonnes"
+      },
+      {
+        "field": "Population in thousands (2017)",
+        "type": "quantitative",
+        "format": ".3f",
+        "title": "Population in thousands"
+      },
+      {
+        "field": "GDP per capita (current US$)",
+        "format": ",",
+        "title": "GDP per capita (US$)"
+      },
+      {
+        "field": "Forested area (% of land area)",
+        "title": "Forested area (% of land)"
+      }
+    ]
+  },
+  "config": {}
+}

@@ -1,0 +1,100 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "Change in CO2 Emissions over time",
+  "title": "Change in CO2 Emissions over time",
+  "data": {
+    "url": "https://rasha07.github.io/FIT3179_tut/data/co2_emissions.csv"
+  },
+  "width": 250,
+  "height": 500,
+  "params": [
+    {
+      "name": "region_focus",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Caribbean",
+          "CentralAmerica",
+          "CentralAsia",
+          "EasternAfrica",
+          "EasternAsia",
+          "EasternEurope",
+          "Melanesia",
+          "Micronesia",
+          "MiddleAfrica",
+          "NorthernAfrica",
+          "NorthernAmerica",
+          "NorthernEurope",
+          "Oceania",
+          "Polynesia",
+          "South-easternAsia",
+          "SouthAmerica",
+          "SouthernAfrica",
+          "SouthernAsia",
+          "SouthernEurope",
+          "WesternAfrica",
+          "WesternAsia",
+          "WesternEurope"
+        ],
+        "labels": [
+          "Show All",
+          "Caribbean",
+          "Central America",
+          "Central Asia",
+          "Eastern Africa",
+          "Eastern Asia",
+          "Eastern Europe",
+          "Melanesia",
+          "Micronesia",
+          "Middle Africa",
+          "Northern Africa",
+          "Northern America",
+          "Northern Europe",
+          "Oceania",
+          "Polynesia",
+          "South-eastern Asia",
+          "South America",
+          "Southern Africa",
+          "Southern Asia",
+          "Southern Europe",
+          "Western Africa",
+          "WesternAsia",
+          "Western Europe"
+        ],
+        "name": "Region Focus:"
+      }
+    }
+  ],
+  "transform": [
+    {
+      "lookup": "Country",
+      "from": {
+        "data": {
+          "url": "https://rasha07.github.io/FIT3179_tut/data/country_profile_variables.csv"
+        },
+        "key": "country",
+        "fields": ["Region"]
+      }
+    },
+    {"filter": "region_focus == null || datum.Region == region_focus"}
+  ],
+  "selection": {
+    "region": {"type": "multi", "fields": ["Region"], "bind": "legend"}
+  },
+  "mark": {"type": "line", "point": true},
+  "encoding": {
+    "x": {"field": "Year", "type": "ordinal"},
+    "y": {
+      "field": "Emission",
+      "type": "quantitative",
+      "scale": {"type": "log", "domain": [0.005, 10000]}
+    },
+    "color": {"field": "Country", "type": "nominal"},
+    "tooltip": [
+      {"field": "Country", "type": "nominal"},
+      {"field": "Emission", "type": "quantitative"}
+    ]
+  },
+  "config": {}
+}

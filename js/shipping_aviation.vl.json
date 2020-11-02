@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "World - International Aviation and Shipping Emission",
+  "width": 450,
+  "height": 300,
+  "data": {
+    "values": [
+      {"year": 1990, "type": "Aviation", "emission": 258.941, "change": 109.8},
+      {"year": 2005, "type": "Aviation", "emission": 422.777, "change": 109.8},
+      {"year": 2017, "type": "Aviation", "emission": 543.381, "change": 109.8},
+      {"year": 1990, "type": "Shipping", "emission": 371.804, "change": 82.2},
+      {"year": 2005, "type": "Shipping", "emission": 572.169, "change": 82.2},
+      {"year": 2017, "type": "Shipping", "emission": 677.248, "change": 82.2}
+    ]
+  },
+  "mark": "area",
+  "encoding": {
+    "x": {"field": "year", "type": "nominal"},
+    "y": {"field": "emission", "type": "quantitative"},
+    "color": {"field": "type", "scale": {"scheme": "category10"}},
+    "tooltip": [
+      {
+        "field": "change",
+        "type": "quantitative",
+        "title": "2017 vs 1990: change (%)"
+      }
+    ]
+  },
+  "config": {}
+}
