@@ -20,28 +20,56 @@
 <div>
     <div class="header">
         <div class="pure-menu pure-menu-horizontal">
-            <a class="pure-menu-heading" href="">Global CO2 Emissions - Muhammad Rasheed Azeez - 30355788</a>
-
-            <!-- <ul class="pure-menu-list">
-                <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Blog</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">About</a></li>
-            </ul> -->
+            <a class="pure-menu-heading" href="">Global CO2 Emissions</a>
         </div>
     </div>
 
     <div class="pure-g">
         <!-- div pure u 1 2 for map text -->
+        <div class="text-box pure-u-1-2">
+            <div class="l-box">
+                <h1 class="text-box-head">Global CO2 Emissions per km^2</h1>
+                <p class="text-box-subhead">Large countries may have relatively low CO2 emissions and small ones may have relatively large emissions. Clearly many factors within these countries cause these disparities.
+                    (Some data on Central Africa doesn’t exist)
+                </p>
+            </div>
+        </div>
         <!-- div pure u 1 2 for map -->
+        <div class="photo-box pure-u-1-2" id="vis_map"></div>
         
         <!-- div pure u 1 2 for bubble -->
+        <div class="photo-box pure-u-1-2" id="vis_pop"></div>
         <!-- div pure u 1 2 for buuble text -->
+        <div class="text-box pure-u-1-2">
+            <div class="l-box">
+                <h1 class="text-box-head">CO2 Emissions in relation to Population and GDP</h1>
+                <p class="text-box-subhead">While population is directly proportional to the emissions of a country, that is not the case with regards to GDP (Gross Domestic Product).
+                    Some developed countries with high GDP have taken steps to reduce their emissions,while others have clearly made economic gain a priority.                    
+                </p>
+            </div>
+        </div>
         
         <!-- div pure u 2 3 for slope text -->
+        <div class="text-box pure-u-2-3">
+            <div class="l-box">
+                <h1 class="text-box-head">CO2 Emissions over the years grouped by Region</h1>
+                <p class="text-box-subhead">We observe a rise in emissions in all countries globally. However, several have taken positive steps and slowed that growth in the recent past.
+                </p>
+            </div>
+        </div>
         <!-- div pure u 1 3 for slope -->
+        <div class="photo-box pure-u-1-3" id="vis_slope"></div>
 
         <!-- div pure u 1 3 for area -->
+        <div class="photo-box pure-u-1-3" id="vis_ship_avi"></div>
         <!-- div pure u 2 3 for area text -->
+        <div class="text-box pure-u-2-3">
+            <div class="l-box">
+                <h1 class="text-box-head">CO2 Emissions caused by Global Shipping and Aviation</h1>
+                <p class="text-box-subhead">Although frequently brought up in world media, global shipping and aviation make up a mere 1.83% and 1.47% of global emissions. They have nonetheless seen significant growth over the years.
+                </p>
+            </div>
+        </div>
 
 
         <!-- <div class="photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
@@ -54,7 +82,7 @@
                 <span>by <a href="http://www.dillonmcintosh.tumblr.com/">Dillon McIntosh</a></span>
             </aside>
         </div> -->
-
+<!-- 
         <div class="text-box pure-u-1 pure-u-md-1-2 pure-u-lg-2-3">
             <div class="l-box">
                 <h1 class="text-box-head">Photos from around the world</h1>
@@ -151,9 +179,10 @@
                     by <a href="http://www.goodfreephotos.com/">Yinan Chen</a>
                 </span>
             </aside>
-        </div>
+        </div> 
+    -->
 
-        <div class="pure-u-1 form-box">
+        <!-- <div class="pure-u-1 form-box">
             <div class="l-box">
                 <h2>Submit a Photo</h2>
 
@@ -163,7 +192,7 @@
                     <button type="submit" class="pure-button">Submit</button>
                 </form>
             </div>
-        </div>
+        </div> -->
 
         <div class="pure-u-1">
             <div class="l-box">
@@ -184,9 +213,31 @@
     </div>
 
     <div class="footer">
-        <a href="https://github.com/RashA07/FIT3179_tut/">Find the source code here.</a>
+        <a href="https://github.com/RashA07/FIT3179_tut/" style="color: azure;">Find the source code here.</a>
     </div>
 </div>
+
+<script type="text/javascript">
+  var spec_map = "https://rasha07.github.io/FIT3179_tut/js/co2_emissions.vl.json";
+  var spec_pop = "https://rasha07.github.io/FIT3179_tut/js/emission_population_gdp.vl.json";
+  var spec_slope = "https://rasha07.github.io/FIT3179_tut/js/emission_time.vl.json";
+  var spec_avi = "https://rasha07.github.io/FIT3179_tut/js/shipping_aviation.vl.json";
+  
+  vegaEmbed('#vis_map', spec_map).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#vis_pop', spec_pop).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#vis_slope', spec_slope).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#vis_ship_avi', spec_avi).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+</script>
+
 
 </body>
 </html>
