@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "CO2 Emissions per km^2",
+  "description": "CO2 Emissions per km^2",
   "width": 800,
   "height": 600,
   "data": {
-    "url": "https://rasha07.github.io/FIT3179_tut/ne_110m.topojson",
+    "url": "https://rasha07.github.io/FIT3179_tut/js/ne_110m.topojson",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
   },
   "transform": [

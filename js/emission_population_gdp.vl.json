@@ -1,7 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "description": "CO2 v Population",
-  "title": "CO2 v Population",
   "width": 400,
   "height": 400,
   "data": {
@@ -39,7 +38,8 @@
       "field": "2017",
       "type": "quantitative",
       "scale": {"type": "log"},
-      "axis": {"tickCount": 5}
+      "axis": {"tickCount": 5},
+      "title": "Emission in tonnes (2017)"
     },
     "size": {
       "field": "GDP per capita (current US$)",

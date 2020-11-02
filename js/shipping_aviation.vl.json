@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "World - International Aviation and Shipping Emission",
   "width": 450,
   "height": 300,
   "data": {
@@ -15,8 +14,12 @@
   },
   "mark": "area",
   "encoding": {
-    "x": {"field": "year", "type": "nominal"},
-    "y": {"field": "emission", "type": "quantitative"},
+    "x": {"field": "year", "type": "nominal", "title": "Year"},
+    "y": {
+      "field": "emission",
+      "type": "quantitative",
+      "title": "Emission in tonnes"
+    },
     "color": {"field": "type", "scale": {"scheme": "category10"}},
     "tooltip": [
       {

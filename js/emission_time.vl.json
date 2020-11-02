@@ -1,7 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "description": "Change in CO2 Emissions over time",
-  "title": "Change in CO2 Emissions over time",
   "data": {
     "url": "https://rasha07.github.io/FIT3179_tut/data/co2_emissions.csv"
   },
@@ -88,7 +87,8 @@
     "y": {
       "field": "Emission",
       "type": "quantitative",
-      "scale": {"type": "log", "domain": [0.005, 10000]}
+      "scale": {"type": "log", "domain": [0.005, 10000]},
+      "title": "Emission in tonnes"
     },
     "color": {"field": "Country", "type": "nominal"},
     "tooltip": [
